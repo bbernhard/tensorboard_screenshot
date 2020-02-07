@@ -6,7 +6,7 @@ const puppeteer = require('puppeteer');
 
 (async () => {
     console.log("Starting browser...");
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
     const page = await browser.newPage();
     await page.goto(url + '/#scalars&tagFilter=.*');
     await page.evaluate(() => {localStorage.setItem('TF.TensorBoard.PaginatedView.limit', '99')});
