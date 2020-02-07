@@ -8,9 +8,8 @@ It can be real tedious manually taking screenshots of TensorBoard graphs for wor
 * Install [Puppeteer](https://github.com/GoogleChrome/puppeteer) (`npm i puppeteer`)
 * Run with:
 ```
-$ node tensorboard_screenshot.js <TensorBoard instance URL>
+$ node tensorboard_screenshot.js <TensorBoard instance URL> <Output Path>
 ```
-* Screenshot of all scalar graphs will be saved as `screenshot.png`.
 
 ## Example
 
@@ -18,11 +17,11 @@ $ node tensorboard_screenshot.js <TensorBoard instance URL>
 $ python3 -c "from easy_tf_log import tflog; tflog('foo', 0); tflog('foo', 1)"
 $ tensorboard --logdir logs &
 TensorBoard 1.12.1 at http://localhost:6006 (Press CTRL+C to quit)
-$ node tensorboard_screenshot.js localhost:6006
+$ node tensorboard_screenshot.js localhost:6006 /tmp/screenshot.png
 Starting browser...
 Waiting for page to finish loading...
 Found 2 graphs
-Screenshot saved to screenshot.png
+Screenshot saved to /tmp/screenshot.png
 ```
 
 Open `screenshot.png` to find:

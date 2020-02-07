@@ -1,4 +1,5 @@
 const url = process.argv[2];
+const output = process.argv[3];
 const n_graphs_per_row = 5;
 
 const puppeteer = require('puppeteer');
@@ -23,7 +24,7 @@ const puppeteer = require('puppeteer');
         height: el.parentElement.getBoundingClientRect().height,
     }});
     console.log("Taking screenshot...")
-    await page.screenshot({path: 'screenshot.png', clip: dimensions});
-    console.log("Screenshot saved to screenshot.png");
+    await page.screenshot({path: output, clip: dimensions});
+    console.log("Screenshot saved to ", output);
     await browser.close();
 })();
